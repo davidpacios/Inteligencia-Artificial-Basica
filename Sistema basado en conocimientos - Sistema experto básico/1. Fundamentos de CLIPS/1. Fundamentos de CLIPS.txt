@@ -1,0 +1,58 @@
+Cuestiones 1.1:  
+• ¿Qué devuelve Clips al añadir un hecho a la Base de Hechos (BH)?
+Devuelve el identificador del hecho en este caso Fact-1.
+• ¿Qué ocurre cuando se introduce un hecho “repetido” en la base de hechos (apellido-1 Perez)? 
+Devuelve el identificador del hecho que ya estaba en la base de hechos
+
+Cuestiones 1.2:
+• ¿Se ha activado alguna regla? ¿Qué hechos activan cada regla?
+Si se han activado 3 reglas y los hechos que activan cada regla son:
+regla1: f-6
+regla1: f-2
+regla1: f-1
+regla2: f-1,f-3,f-7
+regla2: f-2,f-4,f-7
+regla2: f-1,f-4,f-7
+regla2: f-6,f-3,f-7
+regla2: f-6,f-4,f-7
+regla2: f-2,f-3,f-7
+regla2: f-6,f-4,f-5
+regla2: f-6,f-3,f-5
+regla2: f-2,f-3,f-5
+regla2: f-1,f-3,f-5
+regla2: f-2,f-4,f-5
+regla2: f-1,f-4,f-5
+
+Cuestiones 1.3:
+•¿Qué regla se ejecuta en primer lugar? ¿Por qué?
+La primera regla en ejecutarse es la "regla2" ya que es la de más reciente creación.
+•¿Qué pasa si reiniciamos con (clear)?
+Borra todo lo que se hubiese definido en la sesión de trabajo, ya sea desde la
+línea de comandos o desde un fichero (todos los hechos que existan en la
+memoria de trabajo las definiciones de registros, los deffacts, las reglas…).
+
+Cuestiones 1.4:
+•Si se introducen los hechos con (deffacts), y se carga el fichero ¿qué ocurre en la BH y en la Agenda?
+Utilizando el (load fichero.clp) carga el fichero pero no lo carga en la memoria de trabajo
+•¿Qué ocurre en la BH y en la Agenda al ejecutar (reset)? 
+Al utiliza el reset cargamos los hechos en la BH y en la Agenda
+•¿Cuál es el primer hecho que se ha almacenado en la BH?
+El primer hecho que se ha almacenado en la BH es el fact-1 que corresponde a (nombre Juanjo) que es el primero en ser introducido
+
+Cuestiones 1.5:
+•¿Qué devuelve el programa cuando el agente es un coche y el semáforo para los coches está en rojo?  
+El agente vehículo debe esperar ya que el semáforo para vehículos está en rojo
+
+Cuestiones 2:
+Ejecutar: 3_parentesco.facts.clp, 3_parentesco_templates.clp y 3_parentesco.rules.clp
+
+Cuestiones 3:
+
+•Analiza el orden de ejecución de las reglas del bloque QUERY RULES y represéntalo gráficamente en forma de árbol, donde los nodos son las diferentes reglas (determine-engine-state, determine-runs-normally, …).
+Resuelto en "3.1.png"
+
+•Justifique por qué todas las reglas del bloque QUERY RULES incluyen el antecedente (not (repair ?)) y si este es necesario o podría prescindirse de él.
+Es necesario porque si ya se conoce la forma de solucionar/reparar el problema se crea un fact repair y no hace faltan más preguntas para encontrar el problema. Es necesario porque al usar clausulas OR aun teniendo las oslución podría seguir preguntando.
+
+•Identifica qué reglas del sistema utilizan la variable saliencia. Revisando la documentación de CLIPS y otras fuentes investiga acerca del concepto de saliencia y justifica el papel que juega dicha variable y los valores elegidos en las reglas del sistema.
+La saliencia en un snónimo de prioridad en este caso. Por ejemplo la primera pregunta tiene mayor saliencia que el resto que se preguntan posteriormente. Otro ejemplo sería el mensaje de llevar el coche al mecánico es una solución a las perguntas(nodo hoja) y por tanto tiene la menor saliencia

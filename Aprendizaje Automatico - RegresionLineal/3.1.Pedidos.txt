@@ -1,0 +1,79 @@
+#  x04.txt
+#
+#  Reference:
+#
+#    Helmut Spaeth,
+#    Mathematical Algorithms for Linear Regression,
+#    Academic Press, 1991, page 305,
+#    ISBN 0-12-656460-4.
+#
+#    Helmut Spaeth,
+#    Clusterwise Linear Least Squares Versus Least Absolute Deviation
+#      Regression:
+#    A Numerical Comparions for a Case Study,
+#    In: G Gaul, M Schader, editors,
+#    Classification as a Tool of Research,
+#    North Holland, 1986.
+#
+#  Discussion:
+#
+#    Mail order houses issue supplementary lists with varying print runs
+#    and different numbers of pages.  Each supplementary list
+#    produces a certain number of orders.  
+#
+#    There are 38 rows of data.  The data columns include:
+#
+#      I,  the index;
+#      A1. the size of the print run, in thousands;
+#      A2, the number of pages in the list;
+#      B,  the number of orders, in thousands.
+#
+#    We seek a model of the form:
+#
+#      B = A1 * X1 + A2 * X2.
+#
+4 columns
+38 rows
+Index
+Print Runs (x1000)
+Page numbers
+Orders (x1000)
+ 1  2800   22   437
+ 2  2670   14   204
+ 3  2800   37   725
+ 4  2784   15   279
+ 5  2800   38   474
+ 6  2620  172  1587
+ 7  2620  249  2630
+ 8  2470   84   798
+ 9  2620  242  2509
+10  2475  100  1192
+11  2620  114   882
+12  2620   37   511
+13  2448   96   896
+14  2648  116  1297
+15  2525   94   857
+16  1000   47   388
+17   980   48   462
+18  1000   15    67
+19  1112   45   326
+20  1000   23   145
+21  1000   44   298
+22  2188   23   179
+23  1028   47   289
+24  2200   31   200
+25  1000   48   461
+26   980   48   223
+27   728   47   235
+28  2510   26   235
+29  1500   58   594
+30  2500  128  1800
+31  2620  120  1457
+32  2528  120  1710
+33  2630  121  1715
+34  2550  122  1615
+35  1150   61   196
+36  1150   50   309
+37  1150   50   263
+38  1147   60   332
+
